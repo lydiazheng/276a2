@@ -34,9 +34,9 @@ ActiveRecord::Schema.define(version: 20161012142342) do
   create_table "trainers", force: :cascade do |t|
     t.string   "name"
     t.integer  "level"
+    t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "email"
   end
 
   add_foreign_key "tokimons", "trainers"

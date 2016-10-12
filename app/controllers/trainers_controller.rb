@@ -23,15 +23,24 @@ class TrainersController < ApplicationController
   end
 
   def edit
+    @trainer = Trainer.find(params[:id])
   end
 
   def update
+    @trainer = Trainer.find(params[:id])
+    if @trainer.update_attributes(trainer_params)
+      flash[:success] = "Profile updated"
+      redirect_to trainer
+    else
+      render 'index'
+    end
+
   end
 
   def delete
   end
 
-    def destroy
+  def destroy
     Trainer.find(params[:id]).destroy
     flash[:success] = "Trainer deleted"
     redirect_to trainers_url
@@ -39,6 +48,6 @@ class TrainersController < ApplicationController
   
   private
   def trainer_params
-    params.require(:trainer).permit(:name, :level,:email)
+    params.require(:trainer).permit(:name, :email)
   end
 end

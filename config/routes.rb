@@ -7,6 +7,12 @@ Rails.application.routes.draw do
       get :delete
     end
   end
+  
+    resources :tokimons   do
+    member do
+      get :delete
+    end
+  end
 
 
 
