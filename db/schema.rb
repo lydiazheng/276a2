@@ -10,19 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161010192603) do
+ActiveRecord::Schema.define(version: 20161012142342) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "tokimons", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "weight"
+    t.integer  "height"
+    t.integer  "fly"
+    t.integer  "fight"
+    t.integer  "fire"
+    t.integer  "water"
+    t.integer  "electric"
+    t.integer  "ice"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "trainer_id"
+    t.index ["trainer_id"], name: "index_tokimons_on_trainer_id", using: :btree
   end
 
   create_table "trainers", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "email"
   end
 
+  add_foreign_key "tokimons", "trainers"
 end

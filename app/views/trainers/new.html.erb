@@ -1,0 +1,20 @@
+<h1>Trainers#new</h1>
+<p>Find me in app/views/trainer/new.html.erb</p>
+<%= link_to("<< Back to Trainer List", trainers_path, :class => 'back-link') %>
+
+<div class="row">
+  <div class="col-md-6, col-md-offset-1>
+    <%= form_for(@trainer) do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control'%>
+      
+
+      <%= f.label :email %>
+      <%= f.text_field :email, class: 'form-control'%>
+
+      <br>
+      <%= f.submit "Create my information", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

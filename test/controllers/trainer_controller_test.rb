@@ -1,23 +1,43 @@
 require 'test_helper'
 
 class TrainerControllerTest < ActionDispatch::IntegrationTest
-  test "should get log_in" do
-    get trainer_log_in_url
+  test "should get new" do
+    get trainer_new_url
     assert_response :success
   end
 
-  test "should get trainer_info" do
-    get trainer_trainer_info_url
+  test "should get create" do
+    get trainer_create_url
     assert_response :success
   end
 
-  test "should get trainer" do
-    get trainer_trainer_url
+  test "should get index" do
+    get trainer_index_url
     assert_response :success
   end
 
-  test "should get trainer_rank" do
-    get trainer_trainer_rank_url
+  test "should get show" do
+    get trainer_show_url
+    assert_response :success
+  end
+
+  test "should get edit" do
+    get trainer_edit_url
+    assert_response :success
+  end
+
+  test "should get update" do
+    get trainer_update_url
+    assert_response :success
+  end
+
+  test "should get delete" do
+    get trainer_delete_url
+    assert_response :success
+  end
+
+  test "should get destory" do
+    get trainer_destory_url
     assert_response :success
   end
 
