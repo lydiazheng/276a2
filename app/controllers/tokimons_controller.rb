@@ -9,7 +9,10 @@ class TokimonsController < ApplicationController
 
   def new
     @tokimon = Tokimon.new
+    @trainer = Trainer.find(params[:id])
   end
+  
+
 
   def create
     @tokimon = Tokimon.new(tokimon_params)
