@@ -1,2 +1,42 @@
-<h1>Tokimon#new</h1>
-<p>Find me in app/views/tokimon/new.html.erbs</p>
+<% provide(:title, 'New Tokimon') %>
+<h1>Tokimons#new</h1>
+<p>Find me in app/views/tokimon/new.html.erb</p>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-1">
+    <%= form_for(@tokimon) do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control'%>
+      
+      <%= f.label :weight %>
+      <%= f.text_field :weight, class: 'form-control'%>
+      
+      <%= f.label :height %>
+      <%= f.text_field :height, class: 'form-control'%>
+      
+      <%= f.label :fly %>
+      <%= f.text_field :fly, class: 'form-control'%>
+      
+      <%= f.label :fight %>
+      <%= f.text_field :fight, class: 'form-control'%>
+      
+      <%= f.label :fire %>
+      <%= f.text_field :fire, class: 'form-control'%>
+      
+      <%= f.label :water %>
+      <%= f.text_field :water, class: 'form-control'%>
+      
+      <%= f.label :electric %>
+      <%= f.text_field :electric, class: 'form-control'%>
+      
+      <%= f.label :ice %>
+      <%= f.text_field :ice, class: 'form-control'%>
+    
+      <br/><br/>
+      <%= f.submit "Create Tokimon",:id => params[:id], class: "btn btn-primary" %>
+      <%= link_to "Create Tokimon",  {:controller => "tokimons", :action => "create", :id => params[:id]}, :class => "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+  

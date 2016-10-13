@@ -4,11 +4,11 @@ class TokimonsController < ApplicationController
   end
 
   def show
-    @tokimon = Tokimon.find(params[:id])
+    @tokimon = Tokimon.find_by_trainer_id(params[:id])
   end
 
   def new
-    @tokimon = Tokimon.new
+    @tokimon = Tokimon.new("trainer_id" => params[:id])
     @trainer = Trainer.find(params[:id])
   end
   
@@ -16,11 +16,12 @@ class TokimonsController < ApplicationController
 
   def create
     @tokimon = Tokimon.new(tokimon_params)
+    @tokimon.update_attribute(:trainer_id,params[:id])
     if @tokimon.save
       flash[:info] = "tokimon created successful!"
       redirect_to @tokimon
     else
-      render 'new'
+      render 'index'
     end
   end
 
@@ -43,10 +44,11 @@ class TokimonsController < ApplicationController
     flash[:success] = "Tokimon deleted"
     redirect_to tokimons_url
   end
+  
 private
     def tokimon_params
       params.require(:tokimon).permit(:name, :weight, :height, 
-        :fly, :fight, :fire, :water, :electric, :frozon, :trainer_id)
+        :fly, :fight, :fire, :water, :electric, :ice)
     end
 
 

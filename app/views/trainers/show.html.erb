@@ -2,7 +2,7 @@
 <h1>Trainer's profile</h1>
 
 <p id="notice"><%= notice %></p> 	
-<%= link_to "Create Tokimon for this Trainer",  {:controller => "tokimons", :action => "new", :id => @trainer.id}, :class => "btn btn-primary" %>
+<%= link_to "Create Tokimon for this Trainer",  {:controller => "tokimons", :action => "new", :id => @trainer}, :class => "btn btn-primary" %>
 
 <div class="container">
   <table class="table table-hover">
@@ -23,17 +23,17 @@
 	  </tr>
     </thead>
      <tbody>
-        <%@tokimons.each do |f| %>
+        <%@tokimons.each do |tokimon| %>
       	<tr>
-    	    <td><%= f.name %></td>
-    		<td><%= f.weight %></td>
-    		<td><%= f.height %></td>
-    		<td><%= f.fly %></td>
-    		<td><%= f.fight %></td>
-    		<td><%= f.fire %></td>
-    		<td><%= f.water %></td>
-    		<td><%= f.electric %></td>
-    		<td><%= f.ice %></td>
+    	    <td><%= tokimon.name %></td>
+    		<td><%= tokimon.weight %></td>
+    		<td><%= tokimon.height %></td>
+    		<td><%= tokimon.fly %></td>
+    		<td><%= tokimon.fight %></td>
+    		<td><%= tokimon.fire %></td>
+    		<td><%= tokimon.water %></td>
+    		<td><%= tokimon.electric %></td>
+    		<td><%= tokimon.ice %></td>
     		<td><%= link_to "Edit", @tokimons_edit_path, class: "btn btn-primary" %></td>
     		<td><%= link_to 'Delete This Yokimon', @tokimons_destroy_path, data: { confirm: 'Do you want to delete the information?' }, class: "btn btn-danger" %></td>
       	</tr>
