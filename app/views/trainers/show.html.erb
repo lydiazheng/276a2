@@ -34,7 +34,7 @@
     		<td><%= tokimon.water %></td>
     		<td><%= tokimon.electric %></td>
     		<td><%= tokimon.ice %></td>
-    		<td><%= link_to "Edit", edit_trainer_tokimon_path(tokimon), class: "btn btn-primary" %></td>
+    		<td><%= link_to "Edit", edit_trainer_tokimon_path(@trainer, tokimon), class: "btn btn-primary" %></td>
     		<td><%= link_to 'Delete This Tokimon', [@trainer, tokimon], method: :delete, data: { confirm: 'Do you want to delete the information?' }, class: "btn btn-danger" %></td>
       	</tr>
      	<% end %>

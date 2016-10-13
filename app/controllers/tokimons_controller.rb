@@ -28,11 +28,13 @@ class TokimonsController < ApplicationController
 
   def edit
     @tokimon = Tokimon.find(params[:id])
+    #@trainer = Trainer.find(params[:trainer_id])
   end
 
   def update
-     @trainer = Tokimon.find(params[:id])
-     @tokimon = @trainer.tokimons.build
+     #@trainer = Tokimon.find(params[:id])
+    # @tokimon = @trainer.tokimons.build
+    @tokimon = Tokimon.find(params[:id])  
     if @tokimon.update_attributes(tokimon_params)
       flash[:success] = "Profile updated"
       redirect_to @tokimon
@@ -40,6 +42,9 @@ class TokimonsController < ApplicationController
       render 'edit'
     end
   end
+  
+
+  
   
   def delete
   end
@@ -54,7 +59,7 @@ class TokimonsController < ApplicationController
 private
     def tokimon_params
       params.require(:tokimon).permit(:name, :weight, :height, 
-        :fly, :fight, :fire, :water, :electric, :ice, :trainer_id)
+        :fly, :fight, :fire, :water, :electric, :ice)
       # params.require(:tokimon).permit!
     end
 
