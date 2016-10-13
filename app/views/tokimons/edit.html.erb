@@ -3,8 +3,8 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
       <h1>Make change of your Tokimon</h1>
-    <%= form_for edit_trainer_tokimon_path do |f| %>
 
+    <%= form_for [@trainer, @tokimon] do |f| %>
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control'%>
       

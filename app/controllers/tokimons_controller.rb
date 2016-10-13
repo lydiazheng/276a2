@@ -28,16 +28,17 @@ class TokimonsController < ApplicationController
 
   def edit
     @tokimon = Tokimon.find(params[:id])
-    #@trainer = Trainer.find(params[:trainer_id])
+    @trainer = Trainer.find(params[:trainer_id])
   end
 
   def update
-     #@trainer = Tokimon.find(params[:id])
+    @trainer = Trainer.find(params[:trainer_id])
     # @tokimon = @trainer.tokimons.build
-    @tokimon = Tokimon.find(params[:id])  
+    @tokimon = Tokimon.find(params[:id]) 
+  
     if @tokimon.update_attributes(tokimon_params)
       flash[:success] = "Profile updated"
-      redirect_to @tokimon
+      redirect_to trainer_path(params[:trainer_id])
     else
       render 'edit'
     end
