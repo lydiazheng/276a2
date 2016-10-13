@@ -1,8 +1,8 @@
 <% provide(:title, "Show-Tokimon") %>
-<h1>Trainer's profile</h1>
+<h1><%= @trainer.name %>'s profile</h1>
 
 <p id="notice"><%= notice %></p> 	
-<%= link_to "Create Tokimon for this Trainer", new_trainer_tokimon_path(@trainer,@tokimon) ,:class => "btn btn-primary" %>
+<%= link_to "Create A Tokimon", new_trainer_tokimon_path(@trainer,@tokimon) ,:class => "btn btn-primary" %>
 
 <div class="container">
   <table class="table table-hover">
