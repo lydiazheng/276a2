@@ -9,6 +9,6 @@ class Tokimon < ApplicationRecord
 	validates :fly, presence: true, :numericality => { :less_than_or_equal_to => 100 }
 	validates :water, presence: true, :numericality => { :less_than_or_equal_to => 100 }
 	validates :electric, presence: true, :numericality => { :less_than_or_equal_to => 100 }
-	validates :freeze, presence: true, :numericality => { :less_than_or_equal_to => 100 }
+	validates :ice, presence: true, :numericality => { :less_than_or_equal_to => 100 }
 	validates :trainer_id, presence: true
 end

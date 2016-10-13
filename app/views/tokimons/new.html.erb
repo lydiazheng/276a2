@@ -4,7 +4,7 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-1">
-    <%= form_for(@tokimon) do |f| %>
+    <%= form_for([@trainer,@tokimon]) do |f| %>
 
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control'%>
@@ -34,8 +34,7 @@
       <%= f.text_field :ice, class: 'form-control'%>
     
       <br/><br/>
-      <%= f.submit "Create Tokimon",:id => params[:id], class: "btn btn-primary" %>
-      <%= link_to "Create Tokimon",  {:controller => "tokimons", :action => "create", :id => params[:id]}, :class => "btn btn-primary" %>
+      <%= f.submit "Create Tokimon", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
