@@ -12,11 +12,13 @@ Rails.application.routes.draw do
   #   member do
   #     get :delete
   #   end
-      
+  
+  #using nested resource routes  
     resources :trainers do
     resources :tokimons
     end
-
+  
+  get '/tokimons', to: 'tokimons#index'
   end
 
 

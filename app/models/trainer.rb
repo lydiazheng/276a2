@@ -1,5 +1,5 @@
 class Trainer < ApplicationRecord
-    has_many :tokimons
+    has_many :tokimons, dependent: :destroy 
     accepts_nested_attributes_for :tokimons
     
     validates :name, presence: true, length: { maximum: 20 }

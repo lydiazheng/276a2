@@ -1,48 +1,38 @@
-
-<% provide(:title, "Index_tokimon") %>
-
-<h1>The list of Tokimons</h1>
-
-<table style="width:80%">
-<thead>
-	<tr>
-		<th>Name</th>
-		<th>Height</th>
-		<th>Weight</th>
-		<th>Fly</th>
-		<th>Fight</th>
-		<th>Fire</th>
-		<th>Water</th>
-		<th>Electric</th>
-		<th>Ice</th>
-		<th>Trainer ID</th>
+<p id="notice"><%= notice %></p> 	
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+	    <th><%= link_to "Name", :sort => "name" %></th>
+	    <th><%= link_to "Weight", :sort => "weight" %></th>
+	    <th><%= link_to "Height", :sort => "height" %></th>
+	    <th><%= link_to "Fly", :sort => "fly" %></th>
+	    <th><%= link_to "Fight", :sort => "fight" %></th>
+	    <th><%= link_to "Fire", :sort => "fire" %></th>
+	    <th><%= link_to "Water", :sort => "water" %></th>
+	    <th><%= link_to "Electric", :sort => "electric" %></th>
+	    <th><%= link_to "Ice", :sort => "ice" %></th>
+	    <th>Trainer ID</th>
 		<th>Total</th>
-		<th></th>
-		<th></th>
-
-	</tr>
-	</thead>
-
-	<tbody>
-	<% @tokimons.each do |tokimon| %>
-	<tr>
-		<td><%= tokimon.name %></td>
-		<td><%= tokimon.height %></td>
-		<td><%= tokimon.weight %></td>
-		<td><%= tokimon.fly %></td>
-		<td><%= tokimon.fight %></td>
-		<td><%= tokimon.fire %></td>
-		<td><%= tokimon.water %></td>
-		<td><%= tokimon.electric %></td>
-		<td><%= tokimon.ice %></td>
-		<td><%= tokimon.trainer_id %></td>
-		<td><%= tokimon.fire + tokimon.fight + tokimon.fly + tokimon.water + tokimon.electric + tokimon.ice %></td>
-		<td><%= link_to "Profile", tokimon %></td>
-		<td><%= link_to "Delete", tokimon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-	</tr> 
-	<% end %>
-	</tbody>
-</table>
-
-
+	  </tr>
+    </thead>
+     <tbody>
+        <%@tokimons.each do |tokimon| %>
+      	<tr>
+    	    <td><%= tokimon.name %></td>
+    		<td><%= tokimon.weight %></td>
+    		<td><%= tokimon.height %></td>
+    		<td><%= tokimon.fly %></td>
+    		<td><%= tokimon.fight %></td>
+    		<td><%= tokimon.fire %></td>
+    		<td><%= tokimon.water %></td>
+    		<td><%= tokimon.electric %></td>
+    		<td><%= tokimon.ice %></td>
+    		<td><%= tokimon.trainer_id %></td>
+    		<td><%= tokimon.fire + tokimon.fight + tokimon.fly + tokimon.water + tokimon.electric + tokimon.ice %></td>
+      	</tr>
+     	<% end %>
+    </tbody>
+  </table>
+</div>
 

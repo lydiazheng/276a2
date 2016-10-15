@@ -1,6 +1,9 @@
 class TokimonsController < ApplicationController
+  
+#GET    /tokimons(.:format)                           tokimons#index
+#GET    /trainers/:trainer_id/tokimons(.:format)          tokimons#index
   def index
-    @tokimons = Tokimon.all
+    @tokimons = Tokimon.order(params[:sort])
   end
 
   def show

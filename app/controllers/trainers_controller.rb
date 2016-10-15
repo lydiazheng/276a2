@@ -16,7 +16,7 @@ class TrainersController < ApplicationController
   end
 
   def index
-    @trainer = Trainer.order("level")
+    @trainer = Trainer.order(params[:sort])
   end
 
   def show
@@ -45,6 +45,7 @@ class TrainersController < ApplicationController
   end
 
   def destroy
+
     Trainer.find(params[:id]).destroy
     flash[:success] = "Trainer deleted"
     redirect_to trainers_url
