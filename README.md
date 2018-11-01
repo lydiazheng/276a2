@@ -1,15 +1,11 @@
-# README
-
-## A Website for Tokimon Trainer
-
+## Website for Tokimon Trainers
 - Trainers can sign up and edit their tokimons
 - If you want to edit or delete a tokimon, you have to enter its trainer's profile page 
 
-
 ## Sort Function:
-- Click on the table header can sort the table base on that attribute
+- Click on the table header to sort the table based on that clicked header 
 
 ## Using Nested Routes:
 - Can't edit and destroy Tokimons in the Tokimon index page
-- Write a match route on the top of nested route which overwrite the /tokimons/, so there are two url routes to tokimons#index
-- Other than this all routes for tokimons are nested routes and I pass two id(id and trainer_id) in url to call the routes
+- Wrote a match route on the top of nested route which overwrite the /tokimons/, so there are two url routes to tokimons#index
+- Other than these, all routes for tokimons are nested routes and two ids (id and trainer_id) are passed in url to call the routes
